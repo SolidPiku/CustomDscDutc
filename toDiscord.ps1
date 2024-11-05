@@ -5,4 +5,4 @@ $path = "$env:USERPROFILE\Downloads\test.txt"
 
 Set-Clipboard -Value "$path"
 
-curl.exe -F "payload_json={\`"username\`": \`"Tester\`", \`"content\`": \`"New test\`"}" -F "file=@\`"`"" $wh
+curl.exe -F "payload_json={\`"username\`": \`"Tester\`", \`"content\`": \`"New test\`"}" -F "file=@\`"$path`"" $wh
