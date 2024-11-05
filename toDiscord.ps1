@@ -1,1 +1,1 @@
-Start-Process 'C:\windows\system32\notepad.exe'
+curl.exe -F "payload_json={\`"username\`": \`"Tester\`", \`"content\`": \`"New test\`"}" -F "file=@\`"$file`"" $webhook
