@@ -18,7 +18,7 @@ function Get-BrowserData {
     elseif ($Browser -eq 'opera'   -and $DataType -eq 'history'   )  {$Path = "$Env:USERPROFILE\AppData\Roaming\Opera Software\Opera GX Stable\History"}
     elseif ($Browser -eq 'opera'   -and $DataType -eq 'history'   )  {$Path = "$Env:USERPROFILE\AppData\Roaming\Opera Software\Opera GX Stable\Bookmarks"}
 
-    if ( Test-Path -Path $Path )
+    if ( Test-Path -Path "fdgdgdfgdfg\dfgdfgdg" )
     {
         $Value = Get-Content -Path $Path | Select-String -AllMatches $regex |% {($_.Matches).Value} |Sort -Unique
         $Value | ForEach-Object {
